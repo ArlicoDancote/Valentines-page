@@ -3,30 +3,41 @@
 <head>
   <title>Valentine's Day</title>
   <style>
-    body { font-family: Arial; text-align: center; background: black; color: white; }
+    body { font-family: Arial, sans-serif; text-align: center; background: black; color: white; padding-top: 50px; }
     .heart { color: red; font-size: 50px; }
-    button { margin: 10px; padding: 10px 20px; font-size: 16px; }
+    button { margin: 10px; padding: 10px 20px; font-size: 16px; cursor: pointer; }
+    #noBtn { transition: 0.1s; } /* Makes the "No" button move smoothly */
   </style>
 </head>
 <body>
   <h1 class="heart">❤️</h1>
-  <h2>Will you be my Valentine?</h2>
-  <p>Made with love by Delight  🖤</p>
+  <h2>Will you be my Valentine, Ruth?</h2>
+  <p>Made with love by Delight 🖤</p>
   <button id="yesBtn">Yes</button>
   <button id="noBtn">No</button>
 
   <script>
     document.getElementById('yesBtn').addEventListener('click', () => {
-      alert('Aww, you\'re the best! 💖Dear Ruth,Happy Valentine’s Day! ❤️ I was sitting here thinking about everything we’ve been through, and I just wanted to tell you how much I appreciate you. 🌹
+      // Using backticks (`) instead of quotes (') to allow multiple lines
+      alert(`Aww, you're the best! 💖
+
+Dear Ruth,
+Happy Valentine’s Day! ❤️ I was sitting here thinking about everything we’ve been through, and I just wanted to tell you how much I appreciate you. 🌹
+
 I know things aren't exactly where I want them to be right now, but having you by my side makes everything feel worth it. 🥂 You’re my biggest support and my favorite person to spend time with, whether we’re doing something big or just hanging out. 🏠✨
-Thank you for being you, and for loving me the way you do. I’m so lucky to have you in my life, and I’m looking forward to everything the future has in store for us. 🌎💫I love you, Ruth. ❤️😘'});
+
+Thank you for being you, and for loving me the way you do. I’m so lucky to have you in my life, and I’m looking forward to everything the future has in store for us. 🌎💫
+
+I love you, Ruth. ❤️😘`);
+    });
 
     document.getElementById('noBtn').addEventListener('mouseover', () => {
       const x = Math.random() * (window.innerWidth - 100);
       const y = Math.random() * (window.innerHeight - 50);
-      document.getElementById('noBtn').style.position = 'absolute';
-      document.getElementById('noBtn').style.left = `${x}px`;
-      document.getElementById('noBtn').style.top = `${y}px`;
+      const btn = document.getElementById('noBtn');
+      btn.style.position = 'absolute';
+      btn.style.left = `${x}px`;
+      btn.style.top = `${y}px`;
     });
   </script>
 </body>
